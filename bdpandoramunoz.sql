@@ -38,10 +38,10 @@ CREATE TABLE `login` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Table structure for table `envio`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `envio` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `id_producto` int(10) NOT NULL,
@@ -65,11 +65,11 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Indexes for table `envio`
 --
-ALTER TABLE `products`
+ALTER TABLE `envio`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_products_1` (`login_id`);
+  ADD KEY `FK_envio_1` (`login_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -82,9 +82,9 @@ ALTER TABLE `login`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT for table `envio`
 --
-ALTER TABLE `products`
+ALTER TABLE `envio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -92,10 +92,10 @@ ALTER TABLE `products`
 --
 
 --
--- Constraints for table `products`
+-- Constraints for table `envio`
 --
-ALTER TABLE `products`
-  ADD CONSTRAINT `FK_products_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `envio`
+  ADD CONSTRAINT `FK_envio_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
